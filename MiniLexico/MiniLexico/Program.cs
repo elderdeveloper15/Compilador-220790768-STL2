@@ -32,11 +32,11 @@ class LexicalAnalyzer
             {
                 if (char.IsUpper(token))
                 {
-                    Console.WriteLine($"Letra mayúscula: {token}");
+                    Console.WriteLine($"Letra mayUscula: {token}");
                 }
                 else if (char.IsLower(token))
                 {
-                    Console.WriteLine($"Letra minúscula: {token}");
+                    Console.WriteLine($"Letra minuscula: {token}");
                 }
             }
             else if (token == '+' || token == '-')
