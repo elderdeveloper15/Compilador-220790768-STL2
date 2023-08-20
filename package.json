@@ -1,0 +1,20 @@
+{
+  "name": "compilador",
+  "version": "1.0.0",
+  "description": "Compilador para la materia seminario de traductores de lenguaje 2 por jesus angel cota lopez 220790768",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elderdeveloper15/Compilador-220790768-STL2.git"
+  },
+  "type": "module",
+  "author": "jesus angel cota lopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elderdeveloper15/Compilador-220790768-STL2/issues"
+  },
+  "homepage": "https://github.com/elderdeveloper15/Compilador-220790768-STL2#readme"
+}
