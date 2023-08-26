@@ -1,6 +1,9 @@
 # Compilador Jesús Ángel Cota López 220790768
  Proyecto Seminario de Traductores de Lenguaje 2
 
+RESULADOS TAREA MINI LEXICO:
+
+![image](https://github.com/elderdeveloper15/Compilador-220790768-STL2/assets/54344130/0e533b35-0037-4e18-8f7e-d4ba8251c1cf)
 
  RESULTADOS DE ANALIZADOR LEXICO:
 
