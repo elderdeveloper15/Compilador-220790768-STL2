@@ -28,7 +28,7 @@ export class Lexico {
 
     estadoAcept() { this.continue = false; }
     
-    getCadena() {
+    getSimbolo() {
         this.continue = true;
 
         this.tipo = -1;
@@ -255,8 +255,8 @@ export class Lexico {
     fillInfo(){
         switch (this.estado) { 
             case 0:
-                this.tipo = 100;
-                this.simbolo = "Vacio";
+                this.tipo = 23; //100  2 $
+                this.simbolo = "null";
                 break;
             case 1:
                 this.tipo = 0;
@@ -275,7 +275,7 @@ export class Lexico {
                 this.simbolo = "Tipo";
                 break;
             case 5:
-                this.tipo = 5;
+                this.tipo = 5; // 5
                 this.simbolo = "OpSum";
                 break;
             case 6:
@@ -355,4 +355,5 @@ export class Lexico {
         }
     }
 
+    
 }
