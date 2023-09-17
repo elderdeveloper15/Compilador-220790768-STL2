@@ -26,3 +26,11 @@ Tabla LR completa analizando: int main(){ int a; while(a != 2){ a=a+a; } }
 ![image](https://github.com/elderdeveloper15/Compilador-220790768-STL2/assets/54344130/fb02f4f9-f757-4ca6-9810-ee3001a7f231)
 ![image](https://github.com/elderdeveloper15/Compilador-220790768-STL2/assets/54344130/f487f12c-31cf-41c3-91e2-28563c7785f4)
 
+
+Gramática del compilador
+
+Tabla LR utilizada.
+![image](https://github.com/elderdeveloper15/Compilador-220790768-STL2/assets/54344130/28f3cbba-60ad-4e2a-8517-f9a0358464dc)
+
+
+
