@@ -330,7 +330,7 @@ export class Sintactico{
                             this.auxPila = [].concat(this.pila);
                             regla = this.generaRegla(7, this.auxPila);
                             regla.dato = "ListaVar";
-                            regla.hijos.push(raiz);
+                            //regla.hijos.push(raiz);
 
                             raiz = regla;
 
@@ -1188,7 +1188,7 @@ export class Sintactico{
                     if(!this.aceptacion){
                         this.pila.unshift(noTer);
                         this.pila.unshift(ele);
-                        console.log(this.printPila()); //mostrar analisis sintactico
+                        //console.log(this.printPila()); //mostrar analisis sintactico
                     }
 
                 } else {
@@ -1196,8 +1196,8 @@ export class Sintactico{
                     break;
                 }
     
-                if(this.accion > 0)
-                    console.log(this.printPila()); //mostrar analisis sintactico
+                //if(this.accion > 0)
+                   // console.log(this.printPila()); //mostrar analisis sintactico
                 
                 if(!reduccion)
                     lexico.getSimbolo();             

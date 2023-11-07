@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\MiniLexico.csproj": {}
+    "C:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\MiniLexico.csproj": {}
   },
   "projects": {
-    "c:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\MiniLexico.csproj": {
+    "C:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\MiniLexico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\MiniLexico.csproj",
+        "projectUniqueName": "C:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\MiniLexico.csproj",
         "projectName": "MiniLexico",
-        "projectPath": "c:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\MiniLexico.csproj",
+        "projectPath": "C:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\MiniLexico.csproj",
         "packagesPath": "C:\\Users\\jesus\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\obj\\",
+        "outputPath": "C:\\Users\\jesus\\OneDrive\\Escritorio\\UDG\\Seminario de Traductores de Lenguaje II\\Compilador\\MiniLexicoYSintactico\\MiniLexico\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
