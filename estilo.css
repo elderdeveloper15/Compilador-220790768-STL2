@@ -1,0 +1,40 @@
+#descargar{
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 18px;
+    border: cornflowerblue;
+    transition: 1s;
+    margin-top: 5px;
+}
+
+#descargar:hover{
+    transform: scale(1.05);
+    background-color: #56ddff;
+    cursor: pointer;
+}
+
+h1{
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 100px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 500px;
+}
+
+.containerDatos{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    width: 100%;
+    font-family: sans-serif;
+    font-size: small;
+}

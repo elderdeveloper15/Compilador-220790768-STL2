@@ -170,6 +170,7 @@ export class Sintactico{
         let terminal = new Terminal("$"); //terminal son las palabras
         let elemento = new Elemento(0); //elemento son los numeros  
         let raiz = new Nodo();
+        let raizfunc = new Nodo();
         let regla = new Nodo();
         let dato = new Nodo();
         let deflocal = [];
@@ -178,6 +179,7 @@ export class Sintactico{
         let expresion = [];
         let sentenciabloque = [];
         let argumentos = [];
+        let nodosFunc = [];
 
         let col = 0;
         let row = 0;
@@ -229,7 +231,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 2; i++) { //regla 1 <programa> ::= <Definiciones>
                                 this.pila.shift();
@@ -244,9 +246,11 @@ export class Sintactico{
                             regla.dato = "Defs";
                             regla.hijos.push(raiz);
 
+                            //console.log("raiz")
+                            //console.log(raiz)
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             break;
                         case -4:
@@ -258,10 +262,11 @@ export class Sintactico{
                             regla.dato = "Defs";
                             regla.hijos.push(raiz);
                             regla.hijos.push(raiz.hijos.pop());
+                            regla.hijos.push(nodosFunc.pop());  ///thiiiiiiiissssss
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 4; i++) { //regla 3 <Definiciones> ::= <Definicion> <Definiciones>  
                                 this.pila.shift();
@@ -278,7 +283,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
                                        
                             for (let i = 0; i < 2; i++) { //regla 4 <Definicion> ::= <DefVar>
                                 this.pila.shift();
@@ -295,7 +300,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
  
                             for (let i = 0; i < 2; i++) { //regla 5 <Definicion> ::= <DefFunc>
                                 this.pila.shift();
@@ -317,7 +322,7 @@ export class Sintactico{
                             
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 8; i++) { //regla 6 <DefVar> ::= tipo identificador <ListaVar> ;
                                 this.pila.shift();
@@ -334,7 +339,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             break;
                         case -9:
@@ -352,7 +357,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 8 <ListaVar> ::= , identificador <ListaVar>
                                 this.pila.shift();
@@ -374,7 +379,7 @@ export class Sintactico{
                             regla.hijos.push(raiz);
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 12; i++) { //regla 9 <DefFunc> ::= tipo identificador ( <Parametros> ) <BloqFunc>
                                 this.pila.shift();
@@ -387,11 +392,13 @@ export class Sintactico{
                             this.auxPila = [].concat(this.pila);
                             regla = this.generaRegla(10, this.auxPila);
                             regla.dato = "Params";
-                            regla.hijos.push(raiz);
+                            
+                            //regla.hijos.push(raiz);
+                            nodosFunc.push(raiz); ///thiiiiiiiissssss
 
                             params.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             break;
                         case -12:
@@ -407,9 +414,11 @@ export class Sintactico{
                             regla.hijos.push(regla.id);
                             regla.hijos.push(params.pop());
 
+                            nodosFunc.push(raiz); ///thiiiiiiiissssss
+
                             params.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 11 <Parametros> ::= tipo identificador <ListaParam>
                                 this.pila.shift();
@@ -426,7 +435,7 @@ export class Sintactico{
 
                             params.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             break;
                         case -14:
@@ -445,7 +454,7 @@ export class Sintactico{
 
                             params.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 8; i++) { //regla 13 <ListaParam> ::= , tipo identificador <ListaParam> 
                                 this.pila.shift();
@@ -466,7 +475,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 14 <BloqFunc> ::= { <DefLocales> }  
                                 this.pila.shift();
@@ -483,7 +492,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
                             break;
                         case -17:
                             E = 33;
@@ -497,7 +506,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 4; i++) { //regla 16 <DefLocales> ::= <DefLocal> <DefLocales>
                                 this.pila.shift();
@@ -514,7 +523,7 @@ export class Sintactico{
 
                             deflocal.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 2; i++) { //regla 17 <DefLocal> ::= <DefVar>
                                 this.pila.shift();
@@ -531,7 +540,7 @@ export class Sintactico{
 
                             deflocal.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 2; i++) { //regla 18 <DefLocal> ::= <Sentencia> 
                                 this.pila.shift();
@@ -548,7 +557,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             break;
                         case -21:
@@ -563,7 +572,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 4; i++) { //regla 20 <Sentencias> ::= <Sentencia> <Sentencias>  
                                 this.pila.shift();
@@ -585,7 +594,7 @@ export class Sintactico{
                            
                             sentencia.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
                             
                             for (let i = 0; i < 8; i++) { //regla 21 <Sentencia> ::= identificador = <Expresion> ; 
                                 this.pila.shift();
@@ -609,7 +618,7 @@ export class Sintactico{
                            
                             sentencia.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 12; i++) { //regla 22 <Sentencia> ::= if ( <Expresion> ) <SentenciaBloque> <Otro> 
                                 this.pila.shift();
@@ -632,7 +641,7 @@ export class Sintactico{
                            
                             sentencia.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 10; i++) { //regla 23 <Sentencia> ::= while ( <Expresion> ) <Bloque>
                                 this.pila.shift();
@@ -653,7 +662,7 @@ export class Sintactico{
                            
                             sentencia.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 24 <Sentencia> ::= return <ValorRegresa> ;
                                 this.pila.shift();
@@ -673,7 +682,7 @@ export class Sintactico{
                            
                             sentencia.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 4; i++) { //regla 25 <Sentencia> ::= <LlamadaFunc> ; 
                                 this.pila.shift();
@@ -690,7 +699,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             break;
                         case -28:
@@ -705,7 +714,7 @@ export class Sintactico{
                            
                             raiz = regla;
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 4; i++) { //regla 27 <Otro> ::= else <SentenciaBloque> 
                                 this.pila.shift();
@@ -726,7 +735,7 @@ export class Sintactico{
                            
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 28 <Bloque> ::= { <Sentencias> } 
                                 this.pila.shift();
@@ -768,7 +777,7 @@ export class Sintactico{
 
                             argumentos.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
                             break;
                         case -33: //....................
                             E = 40;
@@ -782,7 +791,7 @@ export class Sintactico{
 
                             argumentos.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 4; i++) { //regla 32 <Argumentos> ::= <Expresion> <ListaArgumentos>
                                 this.pila.shift();
@@ -799,7 +808,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
                             break;
                         case -35: //....................
                             E = 41;
@@ -816,7 +825,7 @@ export class Sintactico{
 
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
                             
                             for (let i = 0; i < 6; i++) { //regla 34 <ListaArgumentos> ::= , <Expresion> <ListaArgumentos>
                                 this.pila.shift();
@@ -834,7 +843,7 @@ export class Sintactico{
                            
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 2; i++) { //regla 35 <Termino> ::= <LlamadaFunc> 
                                 this.pila.shift();
@@ -854,7 +863,7 @@ export class Sintactico{
                            
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 2; i++) { //regla 36 <Termino> ::= identificador
                                 this.pila.shift();
@@ -873,7 +882,7 @@ export class Sintactico{
                            
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
                               
                             for (let i = 0; i < 2; i++) { //regla 37 <Termino> ::= entero
                                 this.pila.shift();
@@ -892,7 +901,7 @@ export class Sintactico{
                            
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 2; i++) { //regla 38 <Termino> ::= real
                                 this.pila.shift();
@@ -911,7 +920,7 @@ export class Sintactico{
                            
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 2; i++) { //regla 39 <Termino> ::= cadena
                                 this.pila.shift();
@@ -933,7 +942,7 @@ export class Sintactico{
                            
                             raiz = regla;
 
-                            //console.log(regla);
+                            console.log(regla);
                             
                             for (let i = 0; i < 8; i++) { //regla 40 <LlamadaFunc> ::= identificador ( <Argumentos> )
                                 this.pila.shift();
@@ -951,7 +960,7 @@ export class Sintactico{
 
                             sentenciabloque.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
 
                             console.log("regla 41");
                             for (let i = 0; i < 2; i++) { //regla 41 <SentenciaBloque> ::= <Sentencia>
@@ -970,7 +979,7 @@ export class Sintactico{
 
                             sentenciabloque.push(regla);
 
-                            //console.log(regla);
+                            console.log(regla);
                             
                             for (let i = 0; i < 2; i++) { //regla 42 <SentenciaBloque> ::= <Bloque>
                                 this.pila.shift();
@@ -991,7 +1000,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 43 <Expresion> ::= ( <Expresion> )
                                 this.pila.shift();
@@ -1011,7 +1020,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 4; i++) { //regla 44 <Expresion> ::= opSuma <Expresion>
                                 this.pila.shift();
@@ -1031,7 +1040,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 4; i++) { //regla 45 <Expresion> ::= opNot <Expresion>
                                 this.pila.shift();
@@ -1052,7 +1061,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 46 <Expresion> ::= <Expresion> opMul <Expresion>
                                 this.pila.shift();
@@ -1073,7 +1082,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 47 <Expresion> ::= <Expresion> opSuma <Expresion> 
                                 this.pila.shift();
@@ -1094,7 +1103,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 48 <Expresion> ::= <Expresion> opRelac <Expresion>
                                 this.pila.shift();
@@ -1115,7 +1124,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 49 <Expresion> ::= <Expresion> opIgualdad <Expresion>
                                 this.pila.shift();
@@ -1136,7 +1145,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 50 <Expresion> ::= <Expresion> opAnd <Expresion> 
                                 this.pila.shift();
@@ -1157,7 +1166,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 6; i++) { //regla 51 <Expresion> ::= <Expresion> opOr <Expresion> 
                                 this.pila.shift();
@@ -1174,7 +1183,7 @@ export class Sintactico{
                            
                             expresion.push(regla);
                             
-                            //console.log(regla);
+                            console.log(regla);
 
                             for (let i = 0; i < 2; i++) { //regla 52 <Expresion> ::= <Termino>  
                                 this.pila.shift();
@@ -1196,8 +1205,8 @@ export class Sintactico{
                     break;
                 }
     
-                //if(this.accion > 0)
-                   // console.log(this.printPila()); //mostrar analisis sintactico
+                // if(this.accion > 0)
+                //     console.log(this.printPila()); //mostrar analisis sintactico
                 
                 if(!reduccion)
                     lexico.getSimbolo();             
